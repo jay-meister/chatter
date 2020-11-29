@@ -20,6 +20,8 @@ defmodule Chatter.DataCase do
     quote do
       alias Chatter.Repo
 
+      import Chatter.Factory
+
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
