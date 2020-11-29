@@ -1,1 +1,9 @@
-<h1 class="title">Welcome to Chatter!</h1>
+<h1 data-test="title" class="title">Welcome to Chatter!</h1>
+
+<%= if Enum.empty?(@chat_rooms) do %>
+  <div data-test="no-rooms">No chat rooms yet</div>
+<% else %>
+  <%= for room <- @chat_rooms do %>
+    <li data-test="room"><%= room.name %></li>
+  <% end %>
+<% end %>
