@@ -24,6 +24,8 @@ defmodule ChatterWeb.ConnCase do
       import Phoenix.ConnTest
       import ChatterWeb.ConnCase
 
+      import Chatter.Factory
+
       alias ChatterWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing

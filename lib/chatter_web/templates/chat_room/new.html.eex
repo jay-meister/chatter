@@ -1,0 +1,10 @@
+<h1 data-test="title" class="title">Create a new room</h1>
+
+<%= form_for @changeset, Routes.chat_room_path(@conn, :create), fn f -> %>
+  <%= label f, :name, "Name" %>
+
+  <%= error_tag f, :name %>
+  <%= text_input f, :name %>
+
+  <%= submit "Submit" %>
+<% end %>

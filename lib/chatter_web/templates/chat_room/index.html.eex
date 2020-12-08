@@ -1,9 +1,17 @@
 <h1 data-test="title" class="title">Welcome to Chatter!</h1>
 
+<div>
+  <%= link to: Routes.chat_room_path(@conn, :new) do %>
+    <button>New chat room</button>
+  <% end %>
+</div>
+
 <%= if Enum.empty?(@chat_rooms) do %>
   <div data-test="no-rooms">No chat rooms yet</div>
 <% else %>
   <%= for room <- @chat_rooms do %>
-    <li data-test="room"><%= room.name %></li>
+    <%= link to: Routes.chat_room_path(@conn, :show, room) do %>
+      <li data-test="room-name"><%= room.name %></li>
+    <% end %>
   <% end %>
 <% end %>
